@@ -3,8 +3,7 @@ import { register, applyText } from "https://cdn.skypack.dev/@canva/app-sdk";
 register("sophia-auto-fill", () => {
   return {
     render: () => {
-      const container = document.getElementById("root");
-
+      const container = document.createElement("div");
       container.innerHTML = `
         <h2>Inserir Ferramenta SOPHIA</h2>
         <textarea id="input" rows="15" cols="40" placeholder="Cole aqui o JSON..."></textarea>
@@ -12,9 +11,9 @@ register("sophia-auto-fill", () => {
         <button id="btn">Preencher Campos</button>
       `;
 
-      document.getElementById("btn").addEventListener("click", async () => {
+      container.querySelector("#btn").addEventListener("click", async () => {
         try {
-          const json = JSON.parse(document.getElementById("input").value);
+          const json = JSON.parse(container.querySelector("#input").value);
 
           await applyText({ element_id: "titulo", text: json.titulo });
           await applyText({ element_id: "instrucao", text: json.instrucao });
@@ -26,6 +25,8 @@ register("sophia-auto-fill", () => {
           alert("Erro no JSON.");
         }
       });
-    }
+
+      return container;
+    },
   };
 });
