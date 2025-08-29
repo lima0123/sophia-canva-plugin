@@ -1,0 +1,11 @@
+{
+  "name": "SofIA Tools",
+  "version": "0.0.1",
+  "entrypoint": "https://sophia-canva-plugin.vercel.app/index.html",
+  "permissions": ["document", "element"],
+  "capabilities": {
+    "editor": {
+      "sidebar": true
+    }
+  }
+}
