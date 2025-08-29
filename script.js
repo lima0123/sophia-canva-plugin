@@ -30,3 +30,5 @@ register("sophia-auto-fill", () => {
     },
   };
 });
+
+register();
