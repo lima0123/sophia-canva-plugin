@@ -1,4 +1,4 @@
-import { register, applyText } from "https://cdn.skypack.dev/@canva/app-sdk";
+import { register, applyText } from "./mock-sdk.js";
 
 register("sophia-auto-fill", () => {
   return {
